@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "incremental": true,
+    "composite": true,
+    "lib": ["ESNext"],
+    "module": "NodeNext",
+    "moduleDetection": "force",
+    "moduleResolution": "NodeNext",
+    "outDir": "dist",
+    "resolvePackageJsonExports": true,
+    "noUncheckedIndexedAccess": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": false,
+    "types": ["ambient"],
+    "typeRoots": ["./types", "node_modules/@types"],
+    "target": "ESNext",
+    "verbatimModuleSyntax": true,
+  },
+  "include": ["./src"],
+  "exclude": ["./src/**/*.test.ts"],
+  "references": [
+    { "path": "./tsconfig.examples.json" },
+    { "path": "./tsconfig.test.json" },
+  ],
+}

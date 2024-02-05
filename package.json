@@ -1,0 +1,38 @@
+{
+  "name": "@ggoodman/std",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A set of cross-platform modules for developing robust applications and libraries.",
+  "scripts": {
+    "test": "TSIMP_PROJECT=tsconfig.test.json node --import=tsimp/import --test src/**/*.test.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ggoodman/std.git"
+  },
+  "keywords": [],
+  "author": "Geoff Goodman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ggoodman/std/issues"
+  },
+  "homepage": "https://github.com/ggoodman/std#readme",
+  "engines": {
+    "node": ">=18.12.0"
+  },
+  "volta": {
+    "node": "20.11.0",
+    "npm": "10.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.7",
+    "prettier": "^3.2.4",
+    "tsimp": "^2.0.10",
+    "typescript": "^5.3.3"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.com/"
+  }
+}
