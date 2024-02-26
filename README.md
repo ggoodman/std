@@ -32,7 +32,7 @@ The sub-modules in this package share certain common design philosphies:
 
 Propagate cancellation and timeouts through application layers.
 
-**[API Documentation](./doc/context)**
+**[API Documentation](./doc/context/~/)**
 
 **Example**:
 
@@ -54,7 +54,7 @@ await performLongRunningOperation(rootCtl.ctx);
 
 Produce and consume `Disposable` and `AsyncDisposable` resources.
 
-**[API Documentation](./doc/disposable)**
+**[API Documentation](./doc/disposable/~/)**
 
 **Example**:
 
@@ -75,7 +75,7 @@ async function doSomeWork() {
 
 Type-safe and ergonomic invariant checking.
 
-**[API Documentation](./doc/invariant)**
+**[API Documentation](./doc/invariant/~/)**
 
 **Example**:
 
