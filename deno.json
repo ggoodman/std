@@ -1,0 +1,10 @@
+{
+  "name": "@ggoodman/std",
+  "version": "0.0.0",
+  "exports": {
+    "./context": "./src/context/index.ts",
+    "./disposable": "./src/disposable/index.ts",
+    "./invariant": "./src/invariant/index.ts"
+  },
+  "include": ["./src"]
+}
