@@ -1,6 +1,4 @@
-/// <reference lib="esnext.disposable" />
-
-const SuppressedErrorImpl =
+const SuppressedErrorImpl: SuppressedErrorConstructor =
   (globalThis as any)["SuppressedError"] ??
   class SuppressedErrorImpl extends Error implements SuppressedError {
     public readonly name = "SuppressedError";

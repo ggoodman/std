@@ -10,7 +10,7 @@ export class AsyncDisposableStack {
   #disposed = false;
   readonly #stack: Array<AsyncDisposable | Disposable> = [];
 
-  get disposed() {
+  get disposed(): boolean {
     return this.#disposed;
   }
 
@@ -161,7 +161,7 @@ export class DisposableStack implements Disposable {
   #disposed = false;
   readonly #stack: Disposable[] = [];
 
-  get disposed() {
+  get disposed(): boolean {
     return this.#disposed;
   }
 
