@@ -1,4 +1,4 @@
-import { disposeSymbol, type Disposable } from "../disposable/disposable.js";
+import { disposeSymbol, type Disposable } from "../disposable/disposable.ts";
 
 type AnyFunc = (...args: any[]) => any;
 

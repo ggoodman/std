@@ -3,8 +3,8 @@ import {
   disposeSymbol,
   type AsyncDisposable,
   type Disposable,
-} from "./disposable.js";
-import { SuppressedError } from "./errors.js";
+} from "./disposable.ts";
+import { SuppressedError } from "./errors.ts";
 
 export class AsyncDisposableStack {
   #disposed = false;

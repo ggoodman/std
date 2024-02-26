@@ -1,4 +1,4 @@
-import { AbortController } from "./abort_controller.js";
+import { AbortController } from "./abort_controller.ts";
 
 type AbortErrorConstructor = {
   new (): AbortError;

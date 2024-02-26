@@ -1,6 +1,6 @@
-import type { Disposable } from "../disposable/disposable.js";
-import type { AbortSignal } from "./abort_controller.js";
-import type { CancellationReason, ContextError } from "./errors.js";
+import type { Disposable } from "../disposable/disposable.ts";
+import type { AbortSignal } from "./abort_controller.ts";
+import type { CancellationReason, ContextError } from "./errors.ts";
 
 type AnyFunc = (...args: any[]) => any;
 

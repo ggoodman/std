@@ -3,11 +3,11 @@ export {
   isDeadlineExceededError,
   type CancellationError,
   type DeadlineExceededError,
-} from "./errors.js";
+} from "./errors.ts";
 
-export type { Context, ContextController } from "./context.js";
+export type { Context, ContextController } from "./context.ts";
 
 export {
   createRootContext,
   createRootContextController,
-} from "./context_impl.js";
+} from "./context_impl.ts";

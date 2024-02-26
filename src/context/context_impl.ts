@@ -1,7 +1,7 @@
-import { disposeSymbol, type Disposable } from "../disposable/disposable.js";
-import { DisposableStack } from "../disposable/disposable_stack.js";
-import { AbortController, AbortSignal } from "./abort_controller.js";
-import { CallbackStack } from "./callback_stack.js";
+import { disposeSymbol, type Disposable } from "../disposable/disposable.ts";
+import { DisposableStack } from "../disposable/disposable_stack.ts";
+import { AbortController, AbortSignal } from "./abort_controller.ts";
+import { CallbackStack } from "./callback_stack.ts";
 import type {
   AbortSignalLike,
   CancelFunc,
@@ -10,7 +10,7 @@ import type {
   ContextController,
   ContextDataKey,
   ContextDataRef,
-} from "./context.js";
+} from "./context.ts";
 import {
   CancellationErrorImpl,
   DeadlineExceededErrorImpl,
@@ -18,7 +18,7 @@ import {
   type CancellationReason,
   type ContextError,
   type DeadlineExceededError,
-} from "./errors.js";
+} from "./errors.ts";
 
 class ContextDataRefImpl implements ContextDataRef {
   constructor(

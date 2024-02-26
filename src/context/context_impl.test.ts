@@ -1,7 +1,7 @@
 import * as Assert from "node:assert/strict";
 import { mock, test } from "node:test";
-import { createRootContext } from "./context_impl.js";
-import { isCancellationError } from "./errors.js";
+import { createRootContext } from "./context_impl.ts";
+import { isCancellationError } from "./errors.ts";
 
 function isObjectLike(actual: unknown): actual is Record<string, unknown> {
   return actual != null && typeof actual === "object";

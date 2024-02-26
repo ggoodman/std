@@ -1,4 +1,4 @@
-import { AbortError } from "./abort_error.js";
+import { AbortError } from "./abort_error.ts";
 
 export type CancellationReason = {};
 export type ContextError =

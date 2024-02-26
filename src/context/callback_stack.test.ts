@@ -1,6 +1,6 @@
 import * as Assert from "node:assert/strict";
 import { test } from "node:test";
-import { CallbackStack } from "./callback_stack.js";
+import { CallbackStack } from "./callback_stack.ts";
 
 test("Emitter", async (t) => {
   await t.test("will call all listeners exactly once", async (t) => {

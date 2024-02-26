@@ -1,1 +1,1 @@
-export { invariant } from "./invariant.js";
+export { invariant } from "./invariant.ts";
