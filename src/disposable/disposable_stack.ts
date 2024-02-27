@@ -6,6 +6,13 @@ import {
 } from "./disposable.ts";
 import { SuppressedError } from "./errors.ts";
 
+/**
+ * A stack of resources that can be disposed of asynchronously in reverse order of their addition.
+ *
+ * Resources can be added to the stack using the `use`, `adopt`, and `defer` methods.
+ *
+ * @see {@link https://github.com/tc39/proposal-explicit-resource-management?tab=readme-ov-file#the-disposablestack-and-asyncdisposablestack-container-objects}
+ */
 export class AsyncDisposableStack {
   #disposed = false;
   readonly #stack: Array<AsyncDisposable | Disposable> = [];
@@ -157,6 +164,13 @@ class AsyncValueDisposer<T> implements AsyncDisposable {
   }
 }
 
+/**
+ * A stack of resources that can be disposed of synchronously in reverse order of their addition.
+ *
+ * Resources can be added to the stack using the `use`, `adopt`, and `defer` methods.
+ *
+ * @see {@link https://github.com/tc39/proposal-explicit-resource-management?tab=readme-ov-file#the-disposablestack-and-asyncdisposablestack-container-objects}
+ */
 export class DisposableStack implements Disposable {
   #disposed = false;
   readonly #stack: Disposable[] = [];

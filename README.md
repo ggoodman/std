@@ -32,7 +32,7 @@ The sub-modules in this package share certain common design philosphies:
 
 Propagate cancellation and timeouts through application layers.
 
-**[API Documentation](./doc/context/~/)**
+**[API Documentation](https://jsr.io/@ggoodman/std/doc/context/~)**
 
 **Example**:
 
@@ -54,7 +54,7 @@ await performLongRunningOperation(rootCtl.ctx);
 
 Produce and consume `Disposable` and `AsyncDisposable` resources.
 
-**[API Documentation](./doc/disposable/~/)**
+**[API Documentation](https://jsr.io/@ggoodman/std/doc/disposable/~)**
 
 **Example**:
 
@@ -75,7 +75,7 @@ async function doSomeWork() {
 
 Type-safe and ergonomic invariant checking.
 
-**[API Documentation](./doc/invariant/~/)**
+**[API Documentation](https://jsr.io/@ggoodman/std/doc/invariant/~)**
 
 **Example**:
 
@@ -86,4 +86,6 @@ const nodeEnv = process.env["NODE_ENVIRONMENT"];
 
 // Assert that `nodeEnv` is the string `"production"` or throw an `InvariantViolation`.
 invariant(nodeEnv === "production", "This code MUST only be run in production");
+
+// TypeScript now knows that `nodeEnv` is the string `"production"`.
 ```
