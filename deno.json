@@ -1,6 +1,6 @@
 {
   "name": "@ggoodman/std",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "exports": {
     "./context": "./src/context/index.ts",
     "./disposable": "./src/disposable/index.ts",
