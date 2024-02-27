@@ -6,6 +6,15 @@
     "./disposable": "./src/disposable/index.ts",
     "./invariant": "./src/invariant/index.ts"
   },
-  "exclude": ["**"],
-  "include": ["./src/**/*.ts", "./deno.json", "LICENSE", "README.md"]
+  "exclude": [
+    ".gitignore",
+    ".github",
+    "examples",
+    "package.json",
+    "package-lock.json",
+    "tsconfig.json",
+    "tsconfig.test.json",
+    "types",
+    "**/*.test.ts"
+  ]
 }
