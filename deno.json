@@ -6,5 +6,6 @@
     "./disposable": "./src/disposable/index.ts",
     "./invariant": "./src/invariant/index.ts"
   },
+  "exclude": ["**"],
   "include": ["./src"]
 }
