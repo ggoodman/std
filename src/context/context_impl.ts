@@ -424,10 +424,22 @@ class CancelledContextImpl extends ContextImpl {
   }
 }
 
+/**
+ * Create a new root Context.
+ *
+ * Creating new root Context makes sense when you want to decouple the lifetime
+ * of the Context from the lifetime of the application. For example, in an http
+ * server, you might create a new root Context for each request. The http server
+ * itself might stop accepting new requests, but the in-flight request Contexts
+ * can continue to be used.
+ *
+ * A root Context such as this can never be cancelled. However, if these objects
+ * are being created in a long-lived application, it is important to ensure that
+ * they are disposed using the `[Symbol.dispose]()` method or using the `using`
+ * keyword.
+ *
+ * @returns {Context}
+ */
 export function createRootContext(): Context {
   return new ContextImpl(null);
-}
-
-export function createRootContextController(): ContextController {
-  return new ContextControllerImpl(new ContextImpl(null));
 }

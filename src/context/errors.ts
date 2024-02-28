@@ -1,11 +1,23 @@
 import { AbortError } from "./abort_error.ts";
 
+/**
+ * A CancellationReason is a value that provides more information on why a Context was cancelled.
+ */
 export type CancellationReason = {};
+
+/**
+ * A ContextError represents the collection of Error types that resulted in a Context being cancelled.
+ */
 export type ContextError =
   | AbortError
   | CancellationError
   | DeadlineExceededError;
 
+/**
+ * A CancellationError is thrown when a Context is cancelled.
+ *
+ * The `cause` property is a `CancellationReason` that provides more information on why the Context was cancelled. Typically, it is the value passed to the `cancel` method.
+ */
 export interface CancellationError extends Error {
   cause: CancellationReason;
   message: string;
@@ -30,10 +42,19 @@ export class CancellationErrorImpl
   }
 }
 
+/**
+ * Check whether a variable is a CancellationError.
+ *
+ * @param err possible error
+ * @returns whether the error is a CancellationError
+ */
 export function isCancellationError(err?: unknown): err is CancellationError {
   return isErrorWithTag(err, CancellationErrorTag);
 }
 
+/**
+ * A DeadlineExceededError is thrown when a deadline is exceeded.
+ */
 export interface DeadlineExceededError extends Error {
   message: string;
 }

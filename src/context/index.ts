@@ -39,7 +39,4 @@ export type {
   ContextDataKey,
 } from "./context.ts";
 
-export {
-  createRootContext,
-  createRootContextController,
-} from "./context_impl.ts";
+export { createRootContext } from "./context_impl.ts";

@@ -21,5 +21,7 @@
  *
  * // TypeScript now knows that `nodeEnv` is the string `"production"`.
  * ```
+ *
+ * @module
  */
 export { invariant } from "./invariant.ts";

@@ -4,17 +4,32 @@ import type { CancellationReason, ContextError } from "./errors.ts";
 
 type AnyFunc = (...args: any[]) => any;
 
+/**
+ * A key used to store data in a `Context`.
+ */
 export type ContextDataKey = {};
 
+/**
+ * A function that cancels a Context with a reason.
+ */
 export interface CancelFunc {
+  /**
+   * Cancel the Context with a reason.
+   */
   (reason: CancellationReason): void;
 }
 
+/**
+ * A reference to stored context data.
+ */
 export interface ContextDataRef {
   key: ContextDataKey;
   value: unknown;
 }
 
+/**
+ * A function that handles the cancellation of a Context.
+ */
 export interface CancellationHandler {
   (reason: ContextError): void;
 }
@@ -22,20 +37,42 @@ export interface CancellationHandler {
 /**
  * A controller akin to the `AbortController` that holds a child `Context` and
  * its cancellation function.
+ *
+ * This is useful for creating a child `Context` that can be cancelled. The
+ * child `.ctx` should be passed to lower layers of processing, while the
+ * `.cancel` function can be used to cancel the child `Context`.
+ *
+ * You can think of the `ContextController` as a mutable reference to the
+ * `Context` and its cancellation function. A `Context`, on the other hand, is
+ * an immutable reference to a chain of cancellation signals and deadlines.
  */
 export interface ContextController extends Context {
-  /** The child `Context` suitable to passing down to lower layers of processing. */
+  /** The child `Context` suitable to passing down to lower layers of
+   * processing. */
   readonly ctx: Context;
 
   /** A cancellation function to cancel the attached child `Context`. */
   readonly cancel: CancelFunc;
 }
 
-export interface DisposalErrorHandler {
-  (err: unknown): void;
-}
-
+/**
+ * A `Context` is a handle to a chain of cancellation signals and deadlines.
+ *
+ * It is used to propagate cancellation and deadlines through application
+ * layers. Whenever you create a `Context`, you can create child `Context`s that
+ * inherit the cancellation signals and deadlines from their parent. This allows
+ * you to create a tree of `Context`s that can be cancelled as a whole.
+ *
+ * A `Context` is also a `Disposable` resource, so it can be used in a `using`
+ * statement or explicitly disposed through the `[Symbol.dispose]()` method.
+ */
 export interface Context extends Disposable {
+  /**
+   * The `AbortSignal` that will be aborted when the Context is cancelled.
+   *
+   * This can be useful for inter-operating with other libraries that use
+   * `AbortSignal` for cancellation.
+   */
   readonly signal: AbortSignal;
 
   /**
@@ -82,7 +119,8 @@ export interface Context extends Disposable {
    */
   onDidCancel(handlerFn: CancellationHandler): Disposable;
 
-  /** Throw the cancellation reason as an exception if the Context is aborted. */
+  /** Throw the cancellation reason as an exception if the Context is aborted.
+   * */
   throwIfCancelled(): void;
 
   /**
