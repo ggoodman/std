@@ -19,6 +19,12 @@ const SuppressedErrorImpl: SuppressedErrorConstructor =
 
 export { SuppressedErrorImpl as SuppressedError };
 
+/**
+ * Test whether an object is a `SuppressedError`.
+ *
+ * @param obj a potential suppressed error
+ * @returns whether an object is a suppressed error
+ */
 export function isSuppressedError(obj?: unknown): obj is SuppressedError {
   return obj != null && obj instanceof SuppressedError;
 }

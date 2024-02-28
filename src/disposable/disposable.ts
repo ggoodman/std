@@ -1,6 +1,17 @@
+/**
+ * A symbol that represents the dispose method for an `Disposable` resource.
+ *
+ * It is exported as a named variable that can be used to implement the `Disposable` interface without relying on `Symbol.dispose` being set in the environment.
+ */
 export const disposeSymbol: typeof Symbol.dispose = ((Symbol as any)[
   "dispose"
 ] ??= Symbol.for("Symbol.dispose"));
+
+/**
+ * A symbol that represents the dispose method for an `AsyncDisposable` resource.
+ *
+ * It is exported as a named variable that can be used to implement the `AsyncDisposable` interface without relying on `Symbol.asyncDispose` being set in the environment.
+ */
 export const disposeAsyncSymbol: typeof Symbol.asyncDispose = ((Symbol as any)[
   "asyncDispose"
 ] ??= Symbol.for("Symbol.asyncDispose"));

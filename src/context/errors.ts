@@ -77,6 +77,12 @@ export class DeadlineExceededErrorImpl
   }
 }
 
+/**
+ * Check whether a variable is a DeadlineExceededError.
+ *
+ * @param err possible error
+ * @returns whether the error is a DeadlineExceededError
+ */
 export function isDeadlineExceededError(
   err?: unknown
 ): err is DeadlineExceededError {
